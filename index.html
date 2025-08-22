@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Skak</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/www/css/chessboard.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Online Skak</h1>
+      <div class="room">
+        Rum: <input id="room" placeholder="skriv et rumnavn (fx 2a-sjaks)" />
+        <button id="join">Join</button>
+        <span id="color"></span>
+      </div>
+    </header>
+
+    <main>
+      <div id="board" class="board"></div>
+      <div class="panel">
+        <div class="status">
+          <div><strong>Tur:</strong> <span id="turn">-</span></div>
+          <div id="gameover" class="hidden"></div>
+          <button id="reset">Nulstil spil</button>
+          <div class="share">
+            <p>Del dette link for at spille mod en ven:</p>
+            <input id="sharelink" readonly />
+          </div>
+        </div>
+        <div class="chat">
+          <h3>Chat</h3>
+          <div id="messages" class="messages"></div>
+          <form id="chatform">
+            <input id="msg" placeholder="skriv besked..." autocomplete="off" />
+            <button>Send</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chess.js@1.0.0/dist/chess.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/www/js/chessboard.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
